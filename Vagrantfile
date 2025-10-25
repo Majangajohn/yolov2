@@ -71,9 +71,9 @@ Vagrant.configure("2") do |config|
   
   # Networking
   config.vm.network "private_network", type: "dhcp"
-  config.vm.network "forwarded_port", guest: 3000, host: 3030  # Frontend
-  config.vm.network "forwarded_port", guest: 5000, host: 5050  # Backend
-  config.vm.network "forwarded_port", guest: 27017, host: 27018 # MongoDB
+  config.vm.network "forwarded_port", guest: 3000, host: 3000  # Frontend
+  config.vm.network "forwarded_port", guest: 5000, host: 5000  # Backend
+  config.vm.network "forwarded_port", guest: 27017, host: 27017 # MongoDB
 
    # VirtualBox provider settings
   config.vm.provider "virtualbox" do |vb|
