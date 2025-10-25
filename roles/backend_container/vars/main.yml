@@ -1,3 +1,5 @@
-#SPDX-License-Identifier: MIT-0
 ---
-# vars file for roles/backend_container
+backend_image: "majangajohn/nyange-yolo-backend:v1.0.0"
+backend_port: "5000"
+docker_network: "yolo-net"
+db_name: "yolomy"

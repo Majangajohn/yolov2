@@ -1,3 +1,6 @@
-#SPDX-License-Identifier: MIT-0
 ---
-# vars file for roles/install_docker
+docker_packages:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-compose-plugin
