@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "ubuntu/focal64"
+  config.vm.box = "geerlingguy/ubuntu2004"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -68,8 +68,38 @@ Vagrant.configure("2") do |config|
   #   apt-get install -y apache2
   # SHELL
   # Provisioning configuration for Ansible.
-config.vm.provision "ansible" do |ansible|
-  ansible.playbook = "playbook.yml"
-config.vm.network "forwarded_port", guest: 3000, host: 3000  
+  
+  # Networking
+  config.vm.network "private_network", type: "dhcp"
+  config.vm.network "forwarded_port", guest: 3000, host: 3030  # Frontend
+  config.vm.network "forwarded_port", guest: 5000, host: 5050  # Backend
+  config.vm.network "forwarded_port", guest: 27017, host: 27018 # MongoDB
+
+   # VirtualBox provider settings
+  config.vm.provider "virtualbox" do |vb|
+    vb.name = "yolo-app-vm"
+    vb.memory = 4096
+    vb.cpus = 8
+
+    #--- Ensure extra storage is handled correctly ---
+    # Create the disk if it doesn't exist already
+    unless File.exist?("extra_disk.vdi")
+      vb.customize ["createhd", "--filename", "extra_disk.vdi", "--size", 51200]  # 50 GB
+    end
+
+  # Ensure SATA Controller exists before attaching disk
+    vb.customize ["storagectl", :id, "--name", "SATA Controller", "--add", "sata", "--controller", "IntelAhci"]
+
+    # Attach the created disk
+    vb.customize ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "extra_disk.vdi"]
+  end
+
+  # Sync project folder
+  config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
+
+   # Ansible provisioning
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "playbook.yml"
+    ansible.inventory_path = "inventory.yml"
   end
 end
