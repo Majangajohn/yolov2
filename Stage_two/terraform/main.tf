@@ -46,11 +46,15 @@ resource "aws_security_group" "yolo_sg" {
 
 resource "aws_instance" "yolo_server" {
   ami           = var.ami_id
-  instance_type = "t2.micro"
+  instance_type = "t3.micro"
   key_name      = var.key_name
   security_groups = [aws_security_group.yolo_sg.name]
 
   tags = {
     Name = "yolo-server"
+  }
+
+  provisioner "local-exec" {
+    command = "ansible-playbook -i ${self.public_ip}, playbook.yml --user ubuntu --private-key ${var.key_path}"
   }
 }
