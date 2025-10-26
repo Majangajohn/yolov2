@@ -62,159 +62,16 @@ cd yolov2
 ```
 
 **Project Structure::**
-
-├── ansible.cfg
-├── backend
-│   ├── Dockerfile
-│   ├── models
-│   │   └── Products.js
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── routes
-│   │   └── api
-│   │       └── productRoute.js
-│   ├── server.js
-│   └── upload.js
-├── backend-deployment.yaml
-├── client
-│   ├── Dockerfile
-│   ├── nginx.conf
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── public
-│   │   ├── favicon.ico
-│   │   ├── index.html
-│   │   ├── logo192.png
-│   │   ├── logo512.png
-│   │   ├── manifest.json
-│   │   └── robots.txt
-│   ├── README.md
-│   └── src
-│       ├── App.css
-│       ├── App.test.js
-│       ├── components
-│       │   ├── AboutUs.js
-│       │   ├── AddProduct.js
-│       │   ├── App.js
-│       │   ├── EditProductForm.js
-│       │   ├── Footer.js
-│       │   ├── Header.js
-│       │   ├── Navbar.js
-│       │   ├── NewProductForm.js
-│       │   ├── ProductControl.js
-│       │   ├── ProductDetail.js
-│       │   ├── Product.js
-│       │   ├── ProductList.js
-│       │   └── ReusableForm.js
-│       ├── images
-│       │   ├── backgrounds
-│       │   │   ├── about.jpg
-│       │   │   └── hero.jpg
-│       │   ├── logo
-│       │   │   ├── logo.png
-│       │   │   └── shop.png
-│       │   ├── mouse_click.png
-│       │   ├── product_image.jpeg
-│       │   ├── products
-│       │   │   ├── backpack.png
-│       │   │   ├── giacket.png
-│       │   │   ├── pants.png
-│       │   │   ├── trekkingshoes.png
-│       │   │   ├── tshirt_ladies.png
-│       │   │   └── tshirt.png
-│       │   └── social_icons
-│       │       ├── facebook.png
-│       │       ├── flickr.png
-│       │       ├── g_plus.png
-│       │       ├── pinterest.png
-│       │       ├── skype.png
-│       │       ├── stumble_upon.png
-│       │       ├── twitter_bird.png
-│       │       ├── twitter.png
-│       │       └── you_tube.png
-│       ├── index.js
-│       ├── product-detail.css
-│       ├── serviceWorker.js
-│       └── setupTests.js
-├── docker-compose.yaml
-├── EXPLANATION.md
-├── extra_disk.vdi
-├── frontend-deployment.yaml
-├── git.logs
-├── hosts
-├── image.png
-├── images
-│   ├── ansible-roles.png
-│   ├── products-catalog.png
-│   ├── vagrant-ansible-adding-product.png.png
-│   ├── vagrant-ansible-landing-page.png
-│   ├── vagrant-provision.png
-│   ├── vagrant-up.png
-│   └── vagrant-up-vm-gui.png
-├── inventory.yml
-├── playbook.yml
-├── README.md
-├── roles
-│   ├── backend_container
-│   │   ├── tasks
-│   │   │   └── main.yml
-│   │   └── vars
-│   │       └── main.yml
-│   ├── db_container
-│   │   ├── tasks
-│   │   │   └── main.yml
-│   │   └── vars
-│   │       └── main.yml
-│   ├── frontend_container
-│   │   ├── tasks
-│   │   │   └── main.yml
-│   │   └── vars
-│   │       └── main.yml
-│   └── install_docker
-│       ├── tasks
-│       │   └── main.yml
-│       └── vars
-│           └── main.yml
-├── Stage_two
-│   ├── ansible.cfg
-│   ├── inventory.yml
-│   └── terraform
-│       ├── main.tf
-│       ├── outputs.tf
-│       ├── playbook.yml
-│       ├── roles
-│       │   ├── backend_container
-│       │   │   ├── tasks
-│       │   │   │   └── main.yml
-│       │   │   └── vars
-│       │   │       └── main.yml
-│       │   ├── db_container
-│       │   │   ├── tasks
-│       │   │   │   └── main.yml
-│       │   │   └── vars
-│       │   │       └── main.yml
-│       │   ├── frontend_container
-│       │   │   ├── tasks
-│       │   │   │   └── main.yml
-│       │   │   └── vars
-│       │   │       └── main.yml
-│       │   └── install_docker
-│       │       ├── tasks
-│       │       │   └── main.yml
-│       │       └── vars
-│       │           └── main.yml
-│       ├── terraform.tfstate
-│       ├── terraform.tfstate.backup
-│       └── variables.tf
-├── Structure
-└── Vagrantfile
+## 📁 Project Structure
 
 
 #### Step 3: Provision the VM:
 - After cloning, go to the root of the project and running the following command to provision vm
+
 ```bash
 vagrant up
 ```
+
 <img src="images/vagrant-up.png" alt="Application Screenshot">
 <img src="images/vagrant-up-vm-gui.png" alt="Application Screenshot">
 
@@ -232,13 +89,15 @@ vagrant provision
 
 - Test the "Add Product" functionality to verify data persistence.
 
+
 <img src="images/vagrant-ansible-landing-page.png" alt="Application Screenshot">
 <img src="images/vagrant-ansible-adding-product.png" alt="Application Screenshot">
 <img src="/images/products-catalog.png" alt="Application Screenshot">
 
 
 #### Alternative access link to hosted platform on AWS:
-http://<public_ip>:3000
+```http://<public_ip>:3000```
+
 <img src="images/hosted-app.png" alt="Application Screenshot">
 
 #### Project Structure
