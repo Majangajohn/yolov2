@@ -18,17 +18,20 @@ This document details the setup and execution of the YOLO e-commerce application
 - Sync project directory to `/vagrant`.
 - Run `playbook.yml` via Ansible provisioner (`vagrant provision`).
 
+<img src="images/vagrant_file.png" alt="Application Screenshot">
+
+
 ### Ansible Roles Creation
 Roles were created using:
 ```bash
 ansible-galaxy init roles/<rolename>
 ```
-This generated ```tasks/``` and ```vars/``` directories. Variables are in ```roles/<rolename>/vars/main.yml```.
+This generated `tasks/` and `vars/` directories. Variables are in `roles/<rolename>/vars/main.yml`.
 
 <img src="images/ansible-roles.png" alt="Application Screenshot">
 
 ### Playbook and Role Execution
-The ```playbook.yml``` invokes roles sequentially via ```vagrant provision```. Ansible runs on the host, targeting the VM (```myserver```, 127.0.0.1:2222).
+The `playbook.yml` invokes roles sequentially via ```vagrant provision```. Ansible runs on the host, targeting the VM (```myserver```, 127.0.0.1:2222).
 
 **Roles**
 
@@ -178,4 +181,4 @@ terraform apply
 - **EC2 Key Pair:** `yolo-key` is created in AWS and used in Terraform; key_path points to the local `.pem` file.
 - **AMI ID:** `ami-0e86e20dae9224db8` is for `us-east-1`; update `variables.tf` for your region using AWS Console or CLI.
 
-<img src="products-catalog.png" alt="Application Screenshot">
+<img src="images/aws-portal.png" alt="Application Screenshot">
