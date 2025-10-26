@@ -1,0 +1,5 @@
+---
+db_image: "mongo:latest"
+db_name: "yolomy"
+docker_network: "yolo-net"
+db_port: "27017"

@@ -1,0 +1,5 @@
+---
+frontend_image: "majangajohn/nyange-yolo-client:v1.0.0"
+frontend_port: "3000"
+docker_network: "yolo-net"
+backend_port: "5000"

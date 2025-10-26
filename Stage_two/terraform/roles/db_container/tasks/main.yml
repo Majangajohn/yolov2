@@ -1,0 +1,25 @@
+---
+- name: Create Docker network
+  community.docker.docker_network:
+    name: "{{ docker_network }}"
+    driver: bridge
+    ipam_config:
+      - subnet: "172.20.0.0/16"
+        iprange: "172.20.0.0/16"
+    state: present
+
+- name: Run MongoDB container
+  community.docker.docker_container:
+    name: app-mongo
+    image: "{{ db_image }}"
+    state: started
+    restart_policy: always
+    networks:
+      - name: "{{ docker_network }}"
+    env:
+      MONGO_INITDB_DATABASE: "{{ db_name }}"
+    ports:
+      - "{{ db_port }}:{{ db_port }}"
+    volumes:
+      - app-mongo-data:/data/db
+  tags: [database]

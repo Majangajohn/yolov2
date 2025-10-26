@@ -1,0 +1,21 @@
+---
+- name: Pull frontend Docker image
+  community.docker.docker_image:
+    name: "{{ frontend_image }}"
+    source: pull
+    state: present
+
+- name: Run frontend container
+  community.docker.docker_container:
+    name: nyange-yolo-client
+    image: "{{ frontend_image }}"
+    state: started
+    restart_policy: always
+    networks:
+      - name: "{{ docker_network }}"
+    env:
+      NODE_OPTIONS: "--openssl-legacy-provider"
+      REACT_APP_API_URL: "http://nyange-yolo-backend:{{ backend_port }}"
+    ports:
+      - "{{ frontend_port }}:{{ frontend_port }}"
+  tags: [frontend]
