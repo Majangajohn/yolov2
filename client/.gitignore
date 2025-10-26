@@ -25,3 +25,8 @@ yarn-debug.log*
 yarn-error.log*
 /.vagrant
 .env
+.vagrant/
+*.log
+*.tfstate
+*.tfstate.backup
+Stage_two/terraform/terraform.tfvars

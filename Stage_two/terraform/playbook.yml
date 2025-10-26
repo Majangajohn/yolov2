@@ -1,0 +1,10 @@
+---
+- name: Deploy YOLO e-commerce application on AWS
+  hosts: all
+  become: yes
+  roles:
+    - install_docker
+    - db_container
+    - backend_container
+    - frontend_container
+  tags: [deploy]
