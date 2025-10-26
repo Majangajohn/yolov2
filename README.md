@@ -61,8 +61,83 @@ git clone https://github.com/Majangajohn/yolov2.git
 cd yolov2
 ```
 
-**Project Structure::**
 ## 📁 Project Structure
+├── ansible.cfg
+├── backend
+│   ├── Dockerfile
+│   ├── models
+│   │   └── Products.js
+│   ├── package.json
+│   ├── routes
+│   │   └── api
+│   ├── server.js
+│   └── upload.js
+├── backend-deployment.yaml
+├── client
+│   ├── Dockerfile
+│   ├── nginx.conf
+│   ├── package.json
+│   ├── public
+│   │   ├── favicon.ico
+│   │   ├── index.html
+│   │   ├── logo192.png
+│   │   ├── logo512.png
+│   │   ├── manifest.json
+│   │   └── robots.txt
+│   ├── README.md
+│   └── src
+│       ├── App.css
+│       ├── App.test.js
+│       ├── components
+│       ├── images
+│       ├── index.js
+│       ├── product-detail.css
+│       ├── serviceWorker.js
+│       └── setupTests.js
+├── docker-compose.yaml
+├── EXPLANATION.md
+├── extra_disk.vdi
+├── frontend-deployment.yaml
+├── git.logs
+├── hosts
+├── image.png
+├── images
+│   ├── ansible-roles.png
+│   ├── hosted-app.png
+│   ├── products-catalog.png
+│   ├── terraform.png
+│   ├── vagrant-ansible-adding-product.png
+│   ├── vagrant-ansible-landing-page.png
+│   ├── vagrant-provision.png
+│   ├── vagrant-up.png
+│   └── vagrant-up-vm-gui.png
+├── inventory.yml
+├── playbook.yml
+├── README.md
+├── roles
+│   ├── backend_container
+│   │   ├── tasks
+│   │   └── vars
+│   ├── db_container
+│   │   ├── tasks
+│   │   └── vars
+│   ├── frontend_container
+│   │   ├── tasks
+│   │   └── vars
+│   └── install_docker
+│       ├── tasks
+│       └── vars
+├── Stage_two
+│   ├── ansible.cfg
+│   ├── inventory.yml
+│   └── terraform
+│       ├── main.tf
+│       ├── outputs.tf
+│       ├── playbook.yml
+│       ├── roles
+│       └── variables.tf
+├── Structure
+└── Vagrantfile
 
 
 #### Step 3: Provision the VM:
