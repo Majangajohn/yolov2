@@ -1,0 +1,15 @@
+---
+- name: Install Git
+  ansible.builtin.apt:
+    name: git
+    state: present
+    update_cache: yes
+
+- name: Clone YOLO repository
+  ansible.builtin.git:
+    repo: "{{ repo_url }}"
+    dest: "{{ repo_dest }}"
+    version: main
+    force: yes
+  become: no
+  tags: [clone]
