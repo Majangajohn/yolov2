@@ -234,12 +234,12 @@ vagrant provision
 
 <img src="images/vagrant-ansible-landing-page.png" alt="Application Screenshot">
 <img src="images/vagrant-ansible-adding-product.png" alt="Application Screenshot">
-<img src="products-catalog.png" alt="Application Screenshot">
+<img src="/images/products-catalog.png" alt="Application Screenshot">
 
 
 #### Alternative access link to hosted platform on AWS:
 http://<public_ip>:3000
-<img src="products-catalog.png" alt="Application Screenshot">
+<img src="images/products-catalog.png" alt="Application Screenshot">
 
 #### Project Structure
 
