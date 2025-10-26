@@ -1,0 +1,15 @@
+# Terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+crash.log
+*.tfvars
+*.plan
+
+# Environment and secrets
+.env
+*.pem
+*.key
+
+# System files
+.DS_Store

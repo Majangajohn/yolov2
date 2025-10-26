@@ -53,8 +53,4 @@ resource "aws_instance" "yolo_server" {
   tags = {
     Name = "yolo-server"
   }
-
-  provisioner "local-exec" {
-    command = "ansible-playbook -i ${self.public_ip}, ../playbook.yml --user ubuntu --private-key ${var.key_path}"
-  }
 }
