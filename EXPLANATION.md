@@ -68,7 +68,12 @@ The `playbook.yml` invokes roles sequentially via ```vagrant provision```. Ansib
 - **Variables:** `frontend_image, frontend_port, docker_network, backend_port`.
 - **Modules:** `docker_image, docker_container`.
 - **Tag:** `frontend.`
-**
+
+### Execution Details
+- **Application Location**: Runs in Docker containers (`app-mongo`, `nyange-yolo-backend`, `nyange-yolo-client`) pulled from Docker Hub.
+- **Cloned Repository**: Stored at `/home/vagrant/yolo` for inspection, not used by containers.
+- **Access**: `http://localhost:3000`.
+
 ### Good Practices
 
 - **Variables:** Per-role variables for modularity.
@@ -169,6 +174,12 @@ terraform apply
 <img src="images/terraform.png" alt="Application Screenshot">
 <img src="images/hosted-app.png" alt="Application Screenshot">
 
+
+## verify
+```bash
+ssh -i ~/.ssh/yolo-key.pem ubuntu@<public_ip> "docker ps"
+ssh -i ~/.ssh/yolo-key.pem ubuntu@<public_ip> "ls /home/ubuntu/yolo"
+```
 ## Good Practices
 
 - **Credentials:** Stored in environment variables for security.
@@ -180,5 +191,6 @@ terraform apply
 - **Environment Variables:** AWS credentials are securely handled via `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.
 - **EC2 Key Pair:** `yolo-key` is created in AWS and used in Terraform; key_path points to the local `.pem` file.
 - **AMI ID:** `ami-0e86e20dae9224db8` is for `us-east-1`; update `variables.tf` for your region using AWS Console or CLI.
+- **Cloned Repository**: Stored at `/home/ubuntu/yolo` for inspection, not used by containers.
 
 <img src="images/aws-portal.png" alt="Application Screenshot">

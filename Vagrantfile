@@ -95,7 +95,7 @@ Vagrant.configure("2") do |config|
   end
 
   # Sync project folder
-  config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
+  # config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
 
    # Ansible provisioning
   config.vm.provision "ansible" do |ansible|

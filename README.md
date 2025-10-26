@@ -177,6 +177,14 @@ vagrant provision
 
 <img src="images/hosted-app.png" alt="Application Screenshot">
 
+### Verify:
+```bash
+vagrant ssh
+curl http://localhost:3000
+ls /home/vagrant/yolo
+docker ps
+```
+
 #### Project Structure
 
 - `Vagrantfile:` Provisions Ubuntu VM with 8 CPUs and 4GB RAM.
