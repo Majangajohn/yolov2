@@ -62,6 +62,7 @@ cd yolov2
 ```
 
 ## 📁 Project Structure
+```bash
 ├── ansible.cfg
 ├── backend
 │   ├── Dockerfile
@@ -138,6 +139,7 @@ cd yolov2
 │       └── variables.tf
 ├── Structure
 └── Vagrantfile
+```
 
 
 #### Step 3: Provision the VM:
