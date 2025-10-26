@@ -239,7 +239,7 @@ vagrant provision
 
 #### Alternative access link to hosted platform on AWS:
 http://<public_ip>:3000
-<img src="images/products-catalog.png" alt="Application Screenshot">
+<img src="images/hosted-app.png" alt="Application Screenshot">
 
 #### Project Structure
 

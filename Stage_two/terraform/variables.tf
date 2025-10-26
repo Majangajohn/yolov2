@@ -1,5 +1,11 @@
 variable "aws_region" {
-  default = "us-east-1"
+  description = "AWS region for deployment"
+  default     = "us-east-1"
+}
+
+variable "ami_id" {
+  description = "Ubuntu 20.04 AMI ID"
+  default     = "ami-0e86e20dae9224db8" # Ubuntu 20.04 in us-east-1
 }
 
 variable "aws_access_key" {
@@ -14,11 +20,6 @@ variable "aws_secret_key" {
   sensitive   = true
 }
 
-variable "ami_id" {
-  description = "Ubuntu 20.04 AMI ID"
-  default     = "ami-0e86e20dae9224db8"
-}
-
 variable "key_name" {
   description = "EC2 Key Pair Name"
   type        = string
@@ -26,7 +27,7 @@ variable "key_name" {
 }
 
 variable "key_path" {
-  description = "Path to your SSH private key"
+  description = "Path to private key file"
   type        = string
   default     = "~/.ssh/yolo-key.pem"
 }

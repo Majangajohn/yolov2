@@ -163,6 +163,8 @@ terraform plan
 terraform apply 
 ```
 3. Access at `http://<public_ip>:3000`.
+<img src="images/terraform.png" alt="Application Screenshot">
+<img src="images/hosted-app.png" alt="Application Screenshot">
 
 ## Good Practices
 
