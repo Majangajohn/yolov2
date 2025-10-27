@@ -160,6 +160,17 @@ vagrant provision
 
 
 #### Step 4: Access the Application:
+**Verify:**
+```bash
+vagrant ssh
+ls /home/vagrant/yolo # to list directory of the cloned app
+docker ps # to list running containers
+docker volume # to list persisted volumes
+docker network # to list network
+```
+<img src="images/containers-in-vm.png" alt="Application Screenshot">
+
+
 - **Host Machine:** Open ```http://localhost:3000 ```in a browser.
 
 - **VM:** SSH into the VM (```vagrant ssh```) and run curl ```http://localhost:3000```.
@@ -177,13 +188,6 @@ vagrant provision
 
 <img src="images/hosted-app.png" alt="Application Screenshot">
 
-### Verify:
-```bash
-vagrant ssh
-curl http://localhost:3000
-ls /home/vagrant/yolo
-docker ps
-```
 
 #### Project Structure
 
